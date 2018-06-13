@@ -4,12 +4,12 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        mark = None
-        i = 0
-        while i < len(nums):
-            if nums[i] == mark:
-                del nums[i]
-            else:
-                mark = nums[i]
-                i = i + 1
-        return len(nums)
+        if len(nums) == 0:
+            return 0
+        mark = nums[0]
+        j = 1
+        for i in range(1, len(nums)):
+            if nums[i] != mark:
+                mark = nums[j] = nums[i]
+                j = j + 1
+        return j
