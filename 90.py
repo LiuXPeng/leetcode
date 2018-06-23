@@ -6,16 +6,16 @@ class Solution:
         """
         if len(nums) == 0:
             return [[]]
+        nums.sort()
         res = [[], [nums[0]]]
+        temp = [[nums[0]]]
         for i in range(1, len(nums)):
             if nums[i] == nums[i - 1]:
-                for L in res:
-                    try:
-                        if L[-1] == nums[i]:
-                            res.append(L + [nums[i]])
-                    except:
-                        continue     
+                for L in temp:
+                    L.append(nums[i])
             else:
-                for L in res:
-                    res.append(L + [nums[i]])
+                temp = copy.deepcopy(res)
+                for L in temp:
+                    L.append(nums[i])
+            res = res + copy.deepcopy(temp)
         return res
