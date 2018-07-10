@@ -78,3 +78,6 @@ string不可直接插入，需要拼接
 显然可以用KMP算法
 ### 22
 比较剩余左右括号个数，可以省下第一参数value
+### 49
+sorted返回list，dict.values返回的不是list，要用list()修改<br>
+list不可以当dict的键，tuple可以（少数tuple的用法）
