@@ -89,3 +89,5 @@ list不可以当dict的键，tuple可以（少数tuple的用法）
 'A'.join(list)，给list中所有元素前面加A拼成一个str
 ### 5
 最大回文子串：manacher算法
+### 91
+第一反应是回溯，超时后意识到可以用动态规划
