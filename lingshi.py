@@ -28,3 +28,25 @@ TN: 0.9005521141933747
 TP: 0.797420634920635
 TN: 0.8975267379679145
 正确率： 0.8723
+class Solution:
+    # @param n, an integer
+    # @return an integer
+    def reverseBits(self, n):
+        temp = []
+        while n:
+            if n % 2:
+                temp.append(0)
+            else:
+                temp.append(1)
+            print(n, temp[-1])
+            n = n // 2
+        print(temp)
+        res = 0
+        for i in temp:
+            res = res * 2 + i
+        res1 = 0
+        temp.reverse()
+        for i in temp:
+            res1 = res1 * 2 + i
+        print(res1)
+        return res
